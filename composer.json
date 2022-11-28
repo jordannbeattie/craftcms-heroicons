@@ -1,0 +1,43 @@
+{
+    "name": "jordanbeattie/craftcms-heroicons",
+    "description": "Utilise heroicons in Twig templates",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "heroicons", 
+        "icons"
+    ],
+    "authors": [
+        {
+            "name": "Jordan Beattie",
+            "homepage": "https://jordanbeattie.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "jordanbeattie\\heroicons\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Heroicons",
+        "handle": "heroicons",
+        "class": "jordanbeattie\\heroicons\\Heroicons"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "craftcms/rector": "dev-main"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    }
+}
