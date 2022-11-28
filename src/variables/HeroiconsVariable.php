@@ -6,7 +6,7 @@ use Craft;
 Class HeroiconsVariable
 {
     
-    public function render( $iconName = null, $options = null )
+    public function icon( $iconName = null, $options = null )
     {
         
         if( is_array( $iconName ) )
@@ -15,16 +15,19 @@ Class HeroiconsVariable
             $iconName = null;
         }
 
-        $class = $options['class'] ?? '';
-        $style = $options['style'] ?? "outline";
-        $name  = $options['name']  ?? "code-bracket"; 
-        $name  = $iconName         ?? $name;
+        $class        = $options['class'] ?? '';
+        $style        = $options['style'] ?? "outline";
+        $name         = $options['name']  ?? null; 
+        $name         = $iconName         ?? $name;
+        $templatePath = "heroicons/" . $style . "/" . $name;
 
-        $templatePath = "heroicons/" . $style . "/" . $iconName;
+        if( Craft::$app->view->resolveTemplate( $templatePath ) )
+        {
+            echo Craft::$app->view->renderTemplate( $templatePath, [
+                'class' => $options['class'] ?? null
+            ]);
+        }
 
-        echo Craft::$app->view->renderTemplate( $templatePath, [
-            'class' => $options['class'] ?? null
-        ]);
     }
     
 }

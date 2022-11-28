@@ -1,6 +1,6 @@
 {
     "name": "jordanbeattie/craftcms-heroicons",
-    "description": "Utilise heroicons in Twig templates",
+    "description": "Utilise heroicons in Twig templates. This is an unofficial plugin and is in no way affiliated with Heroicons.",
     "type": "craft-plugin",
     "keywords": [
         "craft",
@@ -26,7 +26,7 @@
     },
     "extra": {
         "name": "Heroicons",
-        "handle": "heroicons",
+        "handle": "craftcms-heroicons",
         "class": "jordanbeattie\\heroicons\\Heroicons"
     },
     "minimum-stability": "dev",
