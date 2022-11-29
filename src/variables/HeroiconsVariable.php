@@ -15,11 +15,13 @@ Class HeroiconsVariable
             $iconName = null;
         }
 
-        $class        = $options['class'] ?? '';
-        $style        = $options['style'] ?? "outline";
-        $name         = $options['name']  ?? null; 
-        $name         = $iconName         ?? $name;
-        $templatePath = "heroicons/" . $style . "/" . $name;
+        $version      = $options['version'] ?? 2;
+        $version      = in_array( $version, [1, 2] ) ? $version : 2;
+        $class        = $options['class']   ?? '';
+        $style        = $options['style']   ?? "outline";
+        $name         = $options['name']    ?? null; 
+        $name         = $iconName           ?? $name;
+        $templatePath = "heroicons/v" . $version . "/" . $style . "/" . $name;
 
         if( Craft::$app->view->resolveTemplate( $templatePath ) )
         {
